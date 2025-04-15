@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CEO_Memo.Models.Salary>
+
+@{
+    ViewBag.Title = "Lịch sử lương";
+}
+
+<h2>Lịch sử lương của nhân viên @ViewBag.EmployeeID</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Tháng</th>
+            <th>Lương cơ bản</th>
+            <th>Phụ cấp</th>
+            <th>Khấu trừ</th>
+            <th>Lương thực lĩnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SalaryMonth.ToString("MM/yyyy")</td>
+                <td>@item.BaseSalary.ToString("N0")</td>
+                <td>@item.Bonus.ToString("N0")</td>
+                <td>@item.Deductions.ToString("N0")</td>
+                <td>@item.NetSalary.ToString("N0")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

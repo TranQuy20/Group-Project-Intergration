@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CEO_Memo.Models.Employee>
+
+@{
+    ViewBag.Title = "Danh sách nhân viên";
+}
+
+<h2>Nhân viên</h2>
+
+@using (Html.BeginForm("Index", "Employee", FormMethod.Get))
+{
+    <p>
+        Tìm kiếm: @Html.TextBox("search")
+        <input type="submit" value="Tìm" class="btn btn-primary" />
+    </p>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Họ tên</th>
+        <th>Giới tính</th>
+        <th>Ngày sinh</th>
+        <th>Phòng ban (ID)</th>
+        <th>Chức danh (ID)</th>
+        <th>Email</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FullName</td>
+            <td>@item.Gender</td>
+            <td>@(item.DateOfBirth.HasValue ? item.DateOfBirth.Value.ToShortDateString() : "")</td>
+            <td>@item.DepartmentID</td>                     <!-- ✅ -->
+            <td>@item.PositionID</td>                       <!-- ✅ -->
+            <td>@item.Email</td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.EmployeeID }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.EmployeeID })
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("Thêm nhân viên mới", "Create", null, new { @class = "btn btn-success" })
+</p>

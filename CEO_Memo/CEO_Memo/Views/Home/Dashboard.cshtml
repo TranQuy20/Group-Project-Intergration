@@ -1,0 +1,34 @@
+﻿@model CEO_Memo.Models.ViewModels.DashboardViewModel
+
+@{
+    ViewBag.Title = "Dashboard tổng quan";
+}
+
+<h2>🎯 Dashboard Tổng Quan</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="alert alert-info">
+            <h4>👨‍💼 Nhân viên</h4>
+            <p>@Model.TotalEmployees</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="alert alert-success">
+            <h4>🏢 Phòng ban</h4>
+            <p>@Model.TotalDepartments</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="alert alert-warning">
+            <h4>📌 Chức vụ</h4>
+            <p>@Model.TotalPositions</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="alert alert-danger">
+            <h4>💰 Lương tháng này</h4>
+            <p>@Model.TotalNetSalaryMonth.ToString("N0") VND</p>
+        </div>
+    </div>
+</div>

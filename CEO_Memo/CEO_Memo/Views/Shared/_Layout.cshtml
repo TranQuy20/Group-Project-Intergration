@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @{
+        var userRole = Session["UserRole"] as string;
+        var userName = Session["UserName"] as string;
+    }
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">CEO_Memo</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Dashboard", "Dashboard", "Home")</li>
+
+                @if (userRole == "Admin" || userRole == "HR")
+                {
+                    <li>@Html.ActionLink("Nhân viên", "Index", "Employee")</li>
+                    <li>@Html.ActionLink("Phòng ban", "Index", "Department")</li>
+                    <li>@Html.ActionLink("Chức vụ", "Index", "Position")</li>
+                }
+
+                @if (userRole == "Admin" || userRole == "Payroll")
+                {
+                    <li>@Html.ActionLink("Bảng lương", "Index", "Payroll")</li>
+                    <li>@Html.ActionLink("Chấm công", "Attendance", "Payroll")</li>
+                }
+
+                @if (userRole == "Admin")
+                {
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Báo cáo <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Tổng quan nhân sự", "HRReport", "Report")</li>
+                            <li>@Html.ActionLink("Lương tháng", "SalaryReport", "Report")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Thông báo <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Gửi lương", "SendMonthlyPayroll", "Notification")</li>
+                            <li>@Html.ActionLink("Nhắc kỷ niệm", "WorkAnniversary", "Notification")</li>
+                            <li>@Html.ActionLink("Cảnh báo nghỉ", "LeaveViolation", "Notification")</li>
+                            <li>@Html.ActionLink("Cảnh báo lương", "SalaryDiscrepancy", "Notification")</li>
+                        </ul>
+                    </li>
+                }
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                @if (userName != null)
+                {
+                    <li><p class="navbar-text">👋 Xin chào, <strong>@userName</strong></p></li>
+                    <li>@Html.ActionLink("Đăng xuất", "Logout", "Auth")</li>
+                }
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

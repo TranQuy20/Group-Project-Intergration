@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CEO_Memo.Models.Salary>
+
+<h2>Bảng lương @ViewBag.Month</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã NV</th>
+            <th>Lương cơ bản</th>
+            <th>Phụ cấp</th>
+            <th>Khấu trừ</th>
+            <th>Lương thực lĩnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="5" class="text-center text-danger">Không có dữ liệu lương trong tháng này.</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeID</td>
+                    <td>@item.BaseSalary.ToString("N0")</td>
+                    <td>@item.Bonus.ToString("N0")</td>
+                    <td>@item.Deductions.ToString("N0")</td>
+                    <td>@item.NetSalary.ToString("N0")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

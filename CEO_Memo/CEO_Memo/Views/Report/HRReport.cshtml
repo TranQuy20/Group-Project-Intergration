@@ -1,0 +1,11 @@
+﻿@model CEO_Memo.Models.ViewModels.HRReportViewModel
+@{
+    ViewBag.Title = "Báo cáo tổng quan nhân sự";
+}
+<h2>Báo cáo tổng quan nhân sự</h2>
+
+<ul class="list-group">
+    <li class="list-group-item">Tổng số nhân viên: <strong>@Model.TotalEmployees</strong></li>
+    <li class="list-group-item">Tổng số phòng ban: <strong>@Model.TotalDepartments</strong></li>
+    <li class="list-group-item">Tổng số chức vụ: <strong>@Model.TotalPositions</strong></li>
+</ul>

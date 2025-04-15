@@ -1,0 +1,36 @@
+﻿@model CEO_Memo.Models.ViewModels.SalaryReportViewModel
+@{
+    ViewBag.Title = "Báo cáo lương tháng " + Model.Month;
+}
+<h2>Báo cáo bảng lương – @Model.Month</h2>
+
+<ul class="list-group">
+    <li class="list-group-item">Số bảng lương: <strong>@Model.TotalPayrolls</strong></li>
+    <li class="list-group-item">Tổng phụ cấp: <strong>@Model.TotalAllowance.ToString("N0")</strong></li>
+    <li class="list-group-item">Tổng khấu trừ: <strong>@Model.TotalDeduction.ToString("N0")</strong></li>
+    <li class="list-group-item">Tổng lương thực lĩnh: <strong>@Model.TotalNetSalary.ToString("N0")</strong></li>
+</ul>
+<h3>Chi tiết bảng lương</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã NV</th>
+            <th>Lương cơ bản</th>
+            <th>Phụ cấp</th>
+            <th>Khấu trừ</th>
+            <th>Lương thực lĩnh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PayrollDetails)
+        {
+            <tr>
+                <td>@item.EmployeeID</td>
+                <td>@String.Format("{0:N0}", item.BaseSalary)</td>
+                <td>@String.Format("{0:N0}", item.Bonus)</td>
+                <td>@String.Format("{0:N0}", item.Deductions)</td>
+                <td><strong>@String.Format("{0:N0}", item.NetSalary)</strong></td>
+            </tr>
+        }
+    </tbody>
+</table>

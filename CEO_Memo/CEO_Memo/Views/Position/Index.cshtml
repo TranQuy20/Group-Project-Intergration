@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CEO_Memo.Models.Position>
+
+@{
+    ViewBag.Title = "Danh sách chức vụ";
+}
+
+<h2>Danh sách chức vụ</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Mã chức vụ</th>
+        <th>Tên chức vụ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PositionID</td>
+            <td>@item.PositionName</td>
+        </tr>
+    }
+</table>

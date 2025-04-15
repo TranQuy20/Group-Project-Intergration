@@ -1,0 +1,886 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CEO_Dashboard\\CEO_Memo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|d:\\ceo_dashboard\\ceo_memo\\ceo_memo\\views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\home\\staffdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\home\\staffdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\position\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\position\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\dal\\humancontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\dal\\humancontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\dal\\payrollcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\dal\\payrollcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\services\\syncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\services\\syncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\alertscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\alertscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\payrollcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\payrollcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\helpers\\emailhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\helpers\\emailhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\helpers\\authhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\helpers\\authhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\positioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\positioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\payroll\\employeepayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\payroll\\employeepayroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\dividend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\dividend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\payroll\\salaryhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\payroll\\salaryhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\payroll\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\payroll\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\payroll\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\payroll\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\viewmodels\\salaryreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\viewmodels\\salaryreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\viewmodels\\hrreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\viewmodels\\hrreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\salary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\salary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\models\\salaryhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\models\\salaryhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\report\\salaryreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\report\\salaryreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\employee\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\employee\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\report\\hrreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\report\\hrreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\notification\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\notification\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|D:\\CEO_Dashboard\\CEO_Memo\\ceo_memo\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4F07D10-45DD-4D11-AA23-61B6F5667BC4}|CEO_Memo\\CEO_Memo.csproj|solutionrelative:ceo_memo\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StaffDashboard.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\StaffDashboard.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Home\\StaffDashboard.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\StaffDashboard.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Home\\StaffDashboard.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T04:27:07.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAgwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T13:51:44.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T09:44:24.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T03:54:44.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwEYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:28.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Position\\Index.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Position\\Index.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Position\\Index.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Position\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:25.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T05:42:40.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Department\\Index.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Department\\Index.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Department\\Index.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Department\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:15.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:29.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\ViewModels\\DashboardViewModel.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\DashboardViewModel.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\ViewModels\\DashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:52.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "CEO_Memo\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwBIAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T09:46:12.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HumanContext.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\DAL\\HumanContext.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\DAL\\HumanContext.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\DAL\\HumanContext.cs",
+              "RelativeToolTip": "CEO_Memo\\DAL\\HumanContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:22:11.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PayrollContext.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\DAL\\PayrollContext.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\DAL\\PayrollContext.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\DAL\\PayrollContext.cs",
+              "RelativeToolTip": "CEO_Memo\\DAL\\PayrollContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T08:57:52.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\EmployeeController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAwwMsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T13:51:56.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SyncService.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Services\\SyncService.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Services\\SyncService.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Services\\SyncService.cs",
+              "RelativeToolTip": "CEO_Memo\\Services\\SyncService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T03:43:34.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AlertsController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\AlertsController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\AlertsController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\AlertsController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\AlertsController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:18:52.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PayrollController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\PayrollController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\PayrollController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\PayrollController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\PayrollController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T03:20:38.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Global.asax.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Global.asax.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Global.asax.cs",
+              "RelativeToolTip": "CEO_Memo\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T03:32:10.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "CEO_Memo\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T03:31:22.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "packages.config",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\packages.config",
+              "RelativeDocumentMoniker": "CEO_Memo\\packages.config",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\packages.config",
+              "RelativeToolTip": "CEO_Memo\\packages.config",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-04-15T03:32:14.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\AttendanceController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\AttendanceController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\AttendanceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:33.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Web.config",
+              "RelativeDocumentMoniker": "CEO_Memo\\Web.config",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Web.config",
+              "RelativeToolTip": "CEO_Memo\\Web.config",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwFAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-04-13T09:00:10.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PositionController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\PositionController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\PositionController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\PositionController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\PositionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:20:52.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AuthHelper.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Helpers\\AuthHelper.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Helpers\\AuthHelper.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Helpers\\AuthHelper.cs",
+              "RelativeToolTip": "CEO_Memo\\Helpers\\AuthHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:21:00.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EmailHelper.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Helpers\\EmailHelper.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Helpers\\EmailHelper.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Helpers\\EmailHelper.cs",
+              "RelativeToolTip": "CEO_Memo\\Helpers\\EmailHelper.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:21:01.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:45.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\ReportController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:47.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "EmployeePayroll.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Payroll\\EmployeePayroll.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Payroll\\EmployeePayroll.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Payroll\\EmployeePayroll.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Payroll\\EmployeePayroll.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T02:03:40.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Employee\\Create.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Employee\\Create.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Employee\\Create.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Employee\\Create.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwEYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:32.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Employee.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Employee.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Employee.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA5wBcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:09.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Dividend.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Dividend.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Dividend.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Dividend.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Dividend.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T02:08:16.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Payroll\\Index.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Payroll\\Index.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Payroll\\Index.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Payroll\\Index.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwB4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T15:15:04.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SalaryHistory.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Payroll\\SalaryHistory.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Payroll\\SalaryHistory.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Payroll\\SalaryHistory.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Payroll\\SalaryHistory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T15:15:06.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Attendance.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Payroll\\Attendance.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Payroll\\Attendance.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Payroll\\Attendance.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Payroll\\Attendance.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:19.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Role.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Role.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:22:53.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Position.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Position.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Position.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Position.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Position.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:06.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Department.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Department.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Department.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:10.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Attendance.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Attendance.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Attendance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:12.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SalaryReportViewModel.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\SalaryReportViewModel.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\ViewModels\\SalaryReportViewModel.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\SalaryReportViewModel.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\ViewModels\\SalaryReportViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:21:06.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "NotificationViewModel.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\NotificationViewModel.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\ViewModels\\NotificationViewModel.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\NotificationViewModel.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\ViewModels\\NotificationViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:21:05.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:53.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "HRReportViewModel.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\HRReportViewModel.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\ViewModels\\HRReportViewModel.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\ViewModels\\HRReportViewModel.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\ViewModels\\HRReportViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:21:03.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Controllers\\DepartmentController.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "CEO_Memo\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:15:26.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Salary.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Salary.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\Salary.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\Salary.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\Salary.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T14:43:57.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "SalaryHistory.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\SalaryHistory.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\Models\\SalaryHistory.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Models\\SalaryHistory.cs",
+              "RelativeToolTip": "CEO_Memo\\Models\\SalaryHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:22:57.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Employee\\Edit.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Employee\\Edit.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Employee\\Edit.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Employee\\Edit.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAuwE0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T14:21:26.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "SalaryReport.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Report\\SalaryReport.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Report\\SalaryReport.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Report\\SalaryReport.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Report\\SalaryReport.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:27.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Employee\\Delete.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Employee\\Delete.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Employee\\Delete.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Employee\\Delete.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T14:15:01.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "HRReport.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Report\\HRReport.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Report\\HRReport.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Report\\HRReport.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Report\\HRReport.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:26.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Result.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Notification\\Result.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Notification\\Result.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Notification\\Result.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Notification\\Result.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:21.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T09:49:30.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:31.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "CEO_Memo\\Views\\Home\\About.cshtml",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "CEO_Memo\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:21:16.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "CEO_Memo\\App_Start\\BundleConfig.cs",
+              "ToolTip": "D:\\CEO_Dashboard\\CEO_Memo\\CEO_Memo\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "CEO_Memo\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:23:26.142Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

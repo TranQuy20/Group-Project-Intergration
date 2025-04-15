@@ -1,0 +1,22 @@
+@model IEnumerable<CEO_Memo.Models.Department>
+
+@{
+    ViewBag.Title = "Danh sách phòng ban";
+}
+
+<h2>Danh sách phòng ban</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Mã phòng</th>
+        <th>Tên phòng ban</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DepartmentID</td>
+            <td>@item.DepartmentName</td>
+        </tr>
+    }
+</table>

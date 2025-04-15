@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CEO_Memo.Models.Attendance>
+
+@{
+    ViewBag.Title = "Chấm công " + ViewBag.Month;
+}
+
+<h2>Chấm công tháng @ViewBag.Month</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã NV</th>
+            <th>Ngày làm việc</th>
+            <th>Nghỉ phép</th>
+            <th>Vắng mặt</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmployeeID</td>
+                <td>@item.WorkDays</td>
+                <td>@item.LeaveDays</td>
+                <td>@item.AbsentDays</td>
+            </tr>
+        }
+    </tbody>
+</table>
