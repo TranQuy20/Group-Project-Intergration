@@ -1,0 +1,139 @@
+﻿@model CEO_Memo.Models.Employee
+
+@{
+    ViewBag.Title = "Thông tin cá nhân";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary font-weight-bold mb-5">Thông tin cá nhân</h2>
+
+    @if (Model != null)
+    {
+        <div class="row">
+            <!-- Information Card Layout -->
+            <div class="col-md-6">
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-user-circle"></i> Họ tên</h5>
+                        <p class="card-text">@Model.FullName</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6"> 
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-venus-mars"></i> Giới tính</h5>
+                        <p class="card-text">@(Model.Gender ?? "Chưa có thông tin")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-birthday-cake"></i> Ngày sinh</h5>
+                        <p class="card-text">@(Model.DateOfBirth?.ToString("dd/MM/yyyy") ?? "Chưa có thông tin")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-phone"></i> Số điện thoại</h5>
+                        <p class="card-text">@(Model.PhoneNumber ?? "Chưa có thông tin")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-envelope"></i> Email</h5>
+                        <p class="card-text">@(Model.Email ?? "Chưa có thông tin")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-calendar-alt"></i> Ngày bắt đầu làm việc</h5>
+                        <p class="card-text">@(Model.HireDate?.ToString("dd/MM/yyyy") ?? "Chưa có thông tin")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-building"></i> Phòng ban</h5>
+                        <p class="card-text">@(Model.Department?.DepartmentName ?? "Chưa có phòng ban")</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg border-light rounded mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary"><i class="fas fa-briefcase"></i> Chức vụ</h5>
+                        <p class="card-text">@(Model.Position?.PositionName ?? "Chưa có chức vụ")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center">Không có thông tin nhân viên.</div>
+    }
+</div>
+
+<!-- Thêm các hiệu ứng CSS -->
+<style>
+    .card {
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .btn-lg {
+        font-size: 18px;
+        padding: 12px 40px;
+    }
+
+    /* Adjust text color and icon size */
+    .text-primary {
+        color: #007bff;
+    }
+
+    .fas {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+
+    .alert-warning {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+</style>
+
+<!-- Đảm bảo tải Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">

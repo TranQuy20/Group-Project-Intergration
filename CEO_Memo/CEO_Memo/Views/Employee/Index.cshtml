@@ -1,47 +1,164 @@
-﻿@model IEnumerable<CEO_Memo.Models.Employee>
+﻿@model IEnumerable<CEO_Memo.Models.ViewModels.EmployeeViewModel>
 
 @{
     ViewBag.Title = "Danh sách nhân viên";
 }
 
-<h2>Nhân viên</h2>
+<!-- Tiêu đề -->
+<h2 class="text-center mb-4 text-primary">Danh sách nhân viên</h2>
 
+<!-- Tìm kiếm -->
 @using (Html.BeginForm("Index", "Employee", FormMethod.Get))
 {
-    <p>
-        Tìm kiếm: @Html.TextBox("search")
-        <input type="submit" value="Tìm" class="btn btn-primary" />
-    </p>
+    <div class="form-group d-flex justify-content-center mb-4">
+        <div class="input-group" style="max-width: 500px; width: 100%;">
+            <input type="text" id="search" name="search" class="form-control form-control-lg" placeholder="Tìm kiếm theo ID, Tên, Phòng ban, Chức danh công việc, Email..." value="@Request["search"]" />
+            <div class="input-group-append">
+                <button class="btn btn-primary btn-lg" type="submit">
+                    <i class="fas fa-search"></i> Tìm kiếm
+                </button>
+            </div>
+        </div>
+    </div>
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>Họ tên</th>
-        <th>Giới tính</th>
-        <th>Ngày sinh</th>
-        <th>Phòng ban (ID)</th>
-        <th>Chức danh (ID)</th>
-        <th>Email</th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.FullName</td>
-            <td>@item.Gender</td>
-            <td>@(item.DateOfBirth.HasValue ? item.DateOfBirth.Value.ToShortDateString() : "")</td>
-            <td>@item.DepartmentID</td>                     <!-- ✅ -->
-            <td>@item.PositionID</td>                       <!-- ✅ -->
-            <td>@item.Email</td>
-            <td>
-                @Html.ActionLink("Sửa", "Edit", new { id = item.EmployeeID }) |
-                @Html.ActionLink("Xóa", "Delete", new { id = item.EmployeeID })
-            </td>
-        </tr>
+<!-- Bảng danh sách nhân viên -->
+<div class="table-responsive mt-4">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Mã NV</th>
+                <th>Họ tên</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Phòng ban</th>
+                <th>Chức danh</th>
+                <th>Email</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeID</td>
+                    <td>@item.FullName</td>
+                    <td>@item.Gender</td>
+                    <td>@(item.DateOfBirth.HasValue ? item.DateOfBirth.Value.ToShortDateString() : "")</td>
+                    <td>@item.DepartmentName</td>
+                    <td>@item.PositionName</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Employee", new { id = item.EmployeeID })" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i> Sửa
+                        </a>
+                        <a href="@Url.Action("Delete", "Employee", new { id = item.EmployeeID })" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Xóa
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Thêm nhân viên mới -->
+<div class="text-center mt-5 mb-4">
+    @Html.ActionLink("Thêm nhân viên mới", "Create", null, new { @class = "btn btn-success btn-lg" })
+</div>
+
+<!-- Custom CSS -->
+<style>
+    /* Tạo độ rộng cho bảng */
+    .table {
+        width: 100%;
+        margin-top: 20px;
     }
-</table>
 
-<p>
-    @Html.ActionLink("Thêm nhân viên mới", "Create", null, new { @class = "btn btn-success" })
-</p>
+        /* Thiết kế bảng */
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    /* Tìm kiếm */
+    .input-group {
+        width: 100%;
+        max-width: 500px; /* Đặt chiều rộng tối đa cho trường tìm kiếm */
+    }
+
+    .input-group-append .btn {
+        font-size: 1rem;
+        padding: 5px 20px;
+    }
+
+    .input-group .form-control {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    /* Các nút hành động */
+    .btn-sm {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn-warning, .btn-danger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        /* Thêm hiệu ứng hover cho các nút */
+        .btn-warning:hover, .btn-danger:hover, .btn-success:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: white;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    /* Điều chỉnh nút "Thêm nhân viên mới" */
+    .btn-lg {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+
+    /* Cải thiện kiểu hiển thị các tiêu đề */
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+</style>

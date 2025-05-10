@@ -1,78 +1,232 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - CEO MEMO</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Thêm jQuery và Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Thêm Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Cấu hình chung */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #007bff; /* Màu xanh chuyên nghiệp */
+            padding: 10px 15px; /* Giảm padding cho navbar */
+        }
+
+        /* Hiệu ứng logo "CEO MEMO" */
+        .navbar-brand {
+            font-size: 1.5rem; /* Giảm kích thước logo */
+            font-weight: bold;
+            color: #ffffff; /* Màu trắng cho logo */
+            transition: transform 0.3s ease, color 0.3s ease; /* Thêm hiệu ứng khi hover */
+        }
+
+            .navbar-brand:hover {
+                transform: scale(1.05); /* Phóng to logo khi hover một cách nhẹ nhàng */
+                color: #ffd700; /* Màu vàng sáng khi hover */
+            }
+
+        /* Các liên kết trong navbar */
+        .navbar a {
+            color: #ffffff !important;
+        }
+
+        /* Hiệu ứng cho các mục trong navbar */
+        .navbar-nav .nav-item a {
+            color: #ffffff !important;
+            font-size: 0.9rem; /* Giảm kích thước chữ của các mục trong navbar */
+            font-weight: 500;
+            padding: 8px 12px; /* Giảm padding cho các mục */
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Thêm hiệu ứng cho các mục khi hover */
+        }
+
+            /* Hiệu ứng cho các mục khi hover */
+            .navbar-nav .nav-item a:hover {
+                background-color: #003366; /* Thêm màu nền khi hover */
+                color: #ffd700 !important; /* Đảm bảo chữ màu vàng khi hover */
+            }
+
+        /* Nút Đăng xuất */
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1rem; /* Giảm kích thước nút "Đăng xuất" */
+            font-weight: bold;
+            color: #ff6f61; /* Màu đỏ cam cho nút Đăng xuất */
+            padding: 8px 15px; /* Giảm padding cho nút Đăng xuất */
+            border-radius: 25px; /* Bo góc cho nút Đăng xuất */
+            transition: all 0.3s ease;
+        }
+
+            /* Hiệu ứng cho nút Đăng xuất khi hover */
+            .navbar-nav .nav-item .nav-link:hover {
+                color: #ffffff !important;
+                background-color: #ff6f61; /* Thay đổi màu nền khi hover */
+                box-shadow: 0 4px 8px rgba(255, 111, 97, 0.3); /* Thêm bóng cho nút */
+                transform: scale(1.05); /* Phóng to khi hover */
+            }
+
+        /* Thông báo xin chào */
+        .navbar-text {
+            font-size: 14px; /* Giảm kích thước chữ */
+            font-weight: bold;
+            color: #ffffff;
+            margin-right: 15px;
+        }
+
+        /* Điều chỉnh navbar cho các kích thước màn hình nhỏ */
+        .navbar-toggler {
+            border-color: #ffffff;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            background-color: #007bff;
+        }
+
+            .dropdown-menu li a {
+                color: #ffffff;
+            }
+
+                .dropdown-menu li a:hover {
+                    background-color: #0056b3;
+                }
+
+        /* Cấu hình Footer */
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            margin-top: auto; /* Tự động đẩy footer xuống dưới */
+        }
+
+        /* Cấu hình cho container */
+        .container {
+            flex: 1;
+            margin-top: 50px;
+        }
+
+        /* Cấu hình cho HTML và Body để có chiều cao đầy đủ */
+        html, body {
+            height: 100%; /* Đảm bảo chiều cao trang luôn 100% */
+            margin: 0; /* Bỏ margin mặc định */
+            display: flex;
+            flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+        }
+
+        /* Đảm bảo các mục có hiệu ứng khi di chuột */
+        .navbar-nav li a, .dropdown-menu li a {
+            cursor: pointer;
+        }
+
+            /* Xóa background của mục đã được chọn */
+            .navbar-nav li a:focus {
+                background-color: transparent !important;
+            }
+
+    </style>
 </head>
 <body>
     @{
         var userRole = Session["UserRole"] as string;
         var userName = Session["UserName"] as string;
+        var userId = Session["UserID"] as int?;
     }
 
-    <nav class="navbar navbar-default">
+    @* Navbar *@
+    <nav class="navbar navbar-expand-lg navbar-light" style="display: @(userName == null ? "none" : "block")">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">CEO_Memo</a>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">CEO MEMO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    @if (userRole == "Admin" || userRole == "HR" || userRole == "Payroll")
+                    {
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Dashboard", "Home")">Dashboard</a></li>
+                    }
+
+                    @if (userRole == "Admin" || userRole == "HR")
+                    {
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Employee")">Nhân viên</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Department")">Phòng ban</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Position")">Chức vụ</a></li>
+                    }
+
+                    @if (userRole == "Admin" || userRole == "Payroll")
+                    {
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Payroll")">Bảng lương</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Attendance", "Payroll")">Chấm công</a></li>
+                    }
+
+                    @if (userRole == "Staff" && userId.HasValue)
+                    {
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("EmployeeInfo", "Home", new { employeeId = userId.Value })">Thông tin cá nhân</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("SalaryHistory", "Payroll", new { employeeId = userId.Value })">Lịch sử lương</a></li>
+                    }
+
+                    @if (userRole == "Admin")
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Báo cáo</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="@Url.Action("HRReport", "Report")">Tổng quan nhân sự</a>
+                                <a class="dropdown-item" href="@Url.Action("SalaryReport", "Report")">Lương tháng</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thông báo</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="@Url.Action("SendMonthlyPayroll", "Notification")">Gửi lương</a>
+                                <a class="dropdown-item" href="@Url.Action("WorkAnniversary", "Notification")">Nhắc kỷ niệm</a>
+                                <a class="dropdown-item" href="@Url.Action("LeaveViolation", "Notification")">Cảnh báo nghỉ</a>
+                                <a class="dropdown-item" href="@Url.Action("SalaryDiscrepancy", "Notification")">Cảnh báo lương</a>
+                            </div>
+                        </li>
+                    }
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    @if (userName != null)
+                    {
+                        <li class="nav-item"><span class="navbar-text">👋 Xin chào, <strong>@userName</strong></span></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout", "Auth")">Đăng xuất</a></li>
+                    }
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Dashboard", "Dashboard", "Home")</li>
-
-                @if (userRole == "Admin" || userRole == "HR")
-                {
-                    <li>@Html.ActionLink("Nhân viên", "Index", "Employee")</li>
-                    <li>@Html.ActionLink("Phòng ban", "Index", "Department")</li>
-                    <li>@Html.ActionLink("Chức vụ", "Index", "Position")</li>
-                }
-
-                @if (userRole == "Admin" || userRole == "Payroll")
-                {
-                    <li>@Html.ActionLink("Bảng lương", "Index", "Payroll")</li>
-                    <li>@Html.ActionLink("Chấm công", "Attendance", "Payroll")</li>
-                }
-
-                @if (userRole == "Admin")
-                {
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Báo cáo <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Tổng quan nhân sự", "HRReport", "Report")</li>
-                            <li>@Html.ActionLink("Lương tháng", "SalaryReport", "Report")</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Thông báo <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Gửi lương", "SendMonthlyPayroll", "Notification")</li>
-                            <li>@Html.ActionLink("Nhắc kỷ niệm", "WorkAnniversary", "Notification")</li>
-                            <li>@Html.ActionLink("Cảnh báo nghỉ", "LeaveViolation", "Notification")</li>
-                            <li>@Html.ActionLink("Cảnh báo lương", "SalaryDiscrepancy", "Notification")</li>
-                        </ul>
-                    </li>
-                }
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                @if (userName != null)
-                {
-                    <li><p class="navbar-text">👋 Xin chào, <strong>@userName</strong></p></li>
-                    <li>@Html.ActionLink("Đăng xuất", "Logout", "Auth")</li>
-                }
-            </ul>
         </div>
     </nav>
 
-    <div class="container body-content">
+    <!-- Main Content Area -->
+    <div class="container">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; @DateTime.Now.Year - CEO MEMO</p>
+    </footer>
+
+    <!-- Scripts -->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

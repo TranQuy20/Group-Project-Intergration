@@ -4,83 +4,195 @@
     ViewBag.Title = "Cập nhật nhân viên";
 }
 
-<h2>Cập nhật thông tin nhân viên</h2>
+<!-- Thêm link đến các thư viện CSS của Bootstrap, Font Awesome và Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+
+    /* Đảm bảo dropdown hiển thị đúng */
+    .custom-select {
+        height: 55px; /* Đảm bảo dropdown có chiều cao đủ lớn */
+
+        background-image: url('data:image/svg+xml;base64,...'); /* Thêm icon xuống cho dropdown */
+    }
+    .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        padding: 15px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-label {
+        display: block; /* Đảm bảo label luôn hiển thị trên trường nhập liệu */
+        margin-bottom: 8px; /* Tạo khoảng cách giữa label và input */
+    }
+    .form-control {
+        width: 100%;
+        height: 55px;
+        border-radius: 10px;
+        padding: 15px;
+        border: 1px solid #dcdcdc;
+        font-size: 16px;
+        box-shadow: none;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    .btn {
+        border-radius: 50px;
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .input-group-prepend .input-group-text {
+        background-color: #f0f4f8;
+        border: none;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .container {
+        max-width: 1000px;
+    }
+
+</style>
+
 
 @using (Html.BeginForm("Edit", "Employee", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.EmployeeID)
 
-    <div class="form-horizontal">
-        <hr />
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.FullName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(m => m.FullName)
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user-edit"></i> Cập nhật nhân viên
             </div>
-        </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.FullName, new { @class = "control-label" })
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                @Html.EditorFor(m => m.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập tên nhân viên" } })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.DateOfBirth, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(m => m.DateOfBirth, new { htmlAttributes = new { type = "date", @class = "form-control" } })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.DateOfBirth, new { @class = "control-label" })
+                            @Html.EditorFor(m => m.DateOfBirth, new { htmlAttributes = new { type = "date", @class = "form-control" } })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Gender, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(m => m.Gender)
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Gender, new { @class = "form-label" })
+                            @Html.DropDownListFor(m => m.Gender,
+                                new SelectList(new[] {
+                                    new { Value = "Male", Text = "Nam" },
+                                    new { Value = "Female", Text = "Nữ" }
+                                }, "Value", "Text", Model.Gender),
+                                "-- Chọn giới tính --",
+                                new { @class = "form-control custom-select" })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(m => m.PhoneNumber)
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Email, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(m => m.Email)
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
+                            @Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Số điện thoại" } })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.HireDate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(m => m.HireDate, new { htmlAttributes = new { type = "date", @class = "form-control" } })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.DepartmentID, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("DepartmentID", (SelectList)ViewBag.Departments, "-- Chọn phòng ban --", new { @class = "form-control" })
-            </div>
-        </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.HireDate, new { @class = "control-label" })
+                            @Html.EditorFor(m => m.HireDate, new { htmlAttributes = new { type = "date", @class = "form-control" } })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.PositionID, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PositionID", (SelectList)ViewBag.Positions, "-- Chọn chức vụ --", new { @class = "form-control" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.DepartmentID, new { @class = "control-label" })
+                            @Html.DropDownList("DepartmentID", (SelectList)ViewBag.Departments, "-- Chọn phòng ban --", new { @class = "form-control" })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(m => m.Status, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(m => m.Status)
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.PositionID, new { @class = "control-label" })
+                            @Html.DropDownList("PositionID", (SelectList)ViewBag.Positions, "-- Chọn chức vụ --", new { @class = "form-control" })
+                        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cập nhật" class="btn btn-success" />
-                @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-default" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Status, new { @class = "form-label" })
+                            @Html.DropDownListFor(m => m.Status, new SelectList(new[] {
+                                new { Value = "Active", Text = "Hoạt động" },
+                                new { Value = "Inactive", Text = "Không hoạt động" }
+                            }, "Value", "Text", Model.Status), "-- Chọn trạng thái --", new { @class = "form-control custom-select", required = "required" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Username, new { @class = "form-label" })
+                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Tên đăng nhập", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "form-label" })
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Mật khẩu", required = "required" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Role, new { @class = "form-label" })
+                            @Html.DropDownListFor(m => m.Role, (SelectList)ViewBag.RoleOptions, "-- Chọn vai trò --", new { @class = "form-control custom-select", required = "required" })
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group text-center mt-4">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Cập nhật</button>
+                    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-secondary" })
+                </div>
             </div>
         </div>
     </div>

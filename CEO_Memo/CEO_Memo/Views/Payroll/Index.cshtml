@@ -1,36 +1,153 @@
 ﻿@model IEnumerable<CEO_Memo.Models.Salary>
 
-<h2>Bảng lương @ViewBag.Month</h2>
+<h2 class="text-center mb-4" style="color: #007bff;">Bảng lương tháng @ViewBag.Month</h2>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Mã NV</th>
-            <th>Lương cơ bản</th>
-            <th>Phụ cấp</th>
-            <th>Khấu trừ</th>
-            <th>Lương thực lĩnh</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (!Model.Any())
-        {
+<!-- Bảng lương -->
+<div class="table-responsive mt-4">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
             <tr>
-                <td colspan="5" class="text-center text-danger">Không có dữ liệu lương trong tháng này.</td>
+                <th>Mã NV</th>
+                <th>Lương cơ bản</th>
+                <th>Phụ cấp</th>
+                <th>Khấu trừ</th>
+                <th>Lương thực lĩnh</th>
             </tr>
-        }
-        else
-        {
-            foreach (var item in Model)
+        </thead>
+        <tbody>
+            @if (!Model.Any())
             {
                 <tr>
-                    <td>@item.EmployeeID</td>
-                    <td>@item.BaseSalary.ToString("N0")</td>
-                    <td>@item.Bonus.ToString("N0")</td>
-                    <td>@item.Deductions.ToString("N0")</td>
-                    <td>@item.NetSalary.ToString("N0")</td>
+                    <td colspan="5" class="text-center text-danger">Không có dữ liệu lương trong tháng này.</td>
                 </tr>
             }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.EmployeeID</td>
+                        <td>@item.BaseSalary.ToString("N0")</td>
+                        <td>@item.Bonus.ToString("N0")</td>
+                        <td>@item.Deductions.ToString("N0")</td>
+                        <td>@item.NetSalary.ToString("N0")</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Biểu đồ lương nếu có -->
+<div class="mt-5">
+    <h3 class="text-center" style="color: #007bff;">Biểu đồ Lương Cơ Bản & Lương Thực Lĩnh</h3>
+    <canvas id="salaryChart"></canvas>
+</div>
+
+<!-- Thêm Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Dữ liệu biểu đồ
+    var ctx = document.getElementById('salaryChart').getContext('2d');
+    var salaryChart = new Chart(ctx, {
+        type: 'bar', // Biểu đồ cột
+        data: {
+            labels: ['Mã NV 1', 'Mã NV 2', 'Mã NV 3', 'Mã NV 4', 'Mã NV 5'], // Labels cho các nhân viên
+            datasets: [{
+                label: 'Lương cơ bản',
+                data: [2000000, 1500000, 1800000, 1600000, 3000000], // Dữ liệu lương cơ bản
+                backgroundColor: '#007bff',
+                borderColor: '#007bff',
+                borderWidth: 1
+            }, {
+                label: 'Lương thực lĩnh',
+                data: [2300000, 1700000, 2050000, 1850000, 3300000], // Dữ liệu lương thực lĩnh
+                backgroundColor: '#28a745',
+                borderColor: '#28a745',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top', // Đặt legend ở trên
+                },
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        label: function (context) {
+                            return context.dataset.label + ': ' + context.raw.toLocaleString(); // Hiển thị giá trị với định dạng số
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
-    </tbody>
-</table>
+    });
+</script>
+
+<!-- Custom CSS -->
+<!-- Thêm CSS để làm cho tiêu đề rõ ràng và dễ nhìn -->
+<style>
+    /* Tiêu đề bảng */
+    h2 {
+        color: #007bff; /* Màu xanh đậm cho tiêu đề */
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    h3 {
+        color: #007bff; /* Màu xanh đậm cho tiêu đề biểu đồ */
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    /* Tạo độ rộng cho biểu đồ */
+    canvas {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Thêm hiệu ứng khi hover vào bảng */
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1; /* Màu nền khi hover */
+        cursor: pointer;
+    }
+
+    /* Cải thiện giao diện bảng */
+    .table th {
+        background-color: #343a40; /* Màu đen cho tiêu đề bảng */
+        color: white; /* Màu trắng cho chữ */
+        font-size: 1.1rem;
+    }
+
+    /* Đảm bảo bảng hiển thị đẹp mắt */
+    .table-bordered {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9; /* Màu sáng cho các dòng chẵn */
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .table th, td {
+        vertical-align: middle;
+    }
+</style>
+
+

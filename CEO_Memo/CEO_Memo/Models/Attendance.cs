@@ -24,6 +24,7 @@ namespace CEO_Memo.Models
         public DateTime AttendanceMonth { get; set; }
 
         public DateTime CreatedAt { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 
 }

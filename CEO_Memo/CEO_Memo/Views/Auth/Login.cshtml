@@ -1,22 +1,161 @@
 ﻿@model CEO_Memo.Models.ViewModels.LoginViewModel
 
-
 @{
-    ViewBag.Title = "Đăng nhập hệ thống";
+    ViewBag.Title = "Đăng Nhập";
 }
 
-<h2>Đăng nhập</h2>
+<div class="login-wrapper">
+    <!-- Thêm logo hoặc tiêu đề "CEO MEMO" -->
+    <div class="logo">
+        <h1>CEO MEMO</h1>
+    </div>
 
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Username)
-    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+    <div class="login-box">
+        <h2>Đăng Nhập</h2>
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <form method="post">
+            <div class="input-container">
+                <input type="text" id="Username" name="Username" placeholder="Tên đăng nhập" class="input-field" required />
+            </div>
 
-    <br />
-    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+            <div class="input-container">
+                <input type="password" id="Password" name="Password" placeholder="Mật khẩu" class="input-field" required />
+            </div>
 
-    <p style="color:red">@ViewBag.Message</p>
-}
+            <button type="submit" class="submit-btn">Đăng Nhập</button>
+
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-danger mt-3">
+                    @ViewBag.Message
+                </div>
+            }
+
+            <!-- Thêm đường dẫn đến trang quên mật khẩu trong form đăng nhập -->
+            <div class="forgot">
+                <a href="@Url.Action("ForgotPassword", "Auth")">Quên mật khẩu?</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Toàn bộ trang nền */
+    body {
+        background: linear-gradient(45deg, #ff6f00, #ff8c00);
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -50px; /* Điều chỉnh để logo không bị quá sát đầu trang */
+    }
+
+    /* Logo "CEO MEMO" */
+    .logo {
+        text-align: center;
+        margin-bottom: 40px; /* Tạo khoảng cách giữa logo và form đăng nhập */
+    }
+
+        .logo h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            margin-top: 60px;
+        }
+
+    /* Phần hộp đăng nhập */
+    .login-box {
+        background: #fff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 300px;
+    }
+
+        .login-box h2 {
+            color: #333;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+    /* Các trường nhập liệu */
+    .input-container {
+        margin-bottom: 20px;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 25px;
+        background-color: #f3f3f3;
+        transition: all 0.3s ease;
+        outline: none;
+    }
+
+        .input-field:focus {
+            border: 2px solid #ff6f00;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(255, 111, 0, 0.5);
+        }
+
+    /* Nút đăng nhập */
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(45deg, #ff6f00, #ff8c00);
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #ff8c00, #ff6f00);
+        }
+
+    /* Quên mật khẩu */
+    .forgot {
+        margin-top: 15px;
+    }
+
+        .forgot a {
+            color: #ff6f00;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+            .forgot a:hover {
+                color: #ff8c00;
+            }
+
+    /* Thông báo lỗi */
+    .alert {
+        margin-top: 10px;
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+</style>

@@ -12,9 +12,9 @@ namespace CEO_Memo.Helpers
     {
         public static void SendEmail(string toEmail, string subject, string body)
         {
-            var fromAddress = new MailAddress("your_email@gmail.com", "CEO Memo System");
+            var fromAddress = new MailAddress("baohuy23425@gmail.com", "CEO Memo System");
             var toAddress = new MailAddress(toEmail);
-            const string fromPassword = "your_app_password"; // tạo từ Gmail 2FA
+            const string fromPassword = "amlv xrzu yefp amso"; 
 
             var smtp = new SmtpClient
             {

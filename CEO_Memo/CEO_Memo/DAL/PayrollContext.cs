@@ -13,5 +13,6 @@ namespace CEO_Memo.DAL
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Department> Departments { get; set; }
+
     }
 }

@@ -22,7 +22,9 @@ namespace CEO_Memo.Models
         public decimal Deductions { get; set; }
 
         public decimal NetSalary { get; set; }
+        public decimal PreviousMonthSalary { get; set; }
 
         public DateTime CreatedAt { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

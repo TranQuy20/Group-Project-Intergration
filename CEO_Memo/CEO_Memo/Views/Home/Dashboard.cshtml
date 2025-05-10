@@ -1,34 +1,137 @@
 ﻿@model CEO_Memo.Models.ViewModels.DashboardViewModel
 
 @{
-    ViewBag.Title = "Dashboard tổng quan";
+    ViewBag.Title = "🎯 Dashboard Tổng Quan";
 }
 
-<h2>🎯 Dashboard Tổng Quan</h2>
+<!-- Đảm bảo rằng trang sử dụng Bootstrap và Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+    /* Điều chỉnh cho các cột trong Dashboard */
+    .row {
+        display: flex;
+        flex-wrap: wrap; /* Đảm bảo các cột có thể gập lại nếu màn hình nhỏ */
+    }
+
+    .col-md-3 {
+        flex: 1; /* Cho phép các cột có chiều rộng linh hoạt */
+        min-width: 200px; /* Đảm bảo cột không quá nhỏ */
+        padding: 10px; /* Đảm bảo có khoảng cách giữa các cột */
+    }
+
+    .card {
+        height: 100%; /* Đảm bảo card chiếm hết không gian trong cột */
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Căn giữa nội dung trong card */
+        align-items: center; /* Căn giữa các icon và text */
+    }
+
+</style>
+<h2 class="text-center my-4">🎯 Dashboard Tổng Quan</h2>
 
 <div class="row">
-    <div class="col-md-3">
-        <div class="alert alert-info">
-            <h4>👨‍💼 Nhân viên</h4>
-            <p>@Model.TotalEmployees</p>
+    <!-- Card Nhân viên -->
+    <div class="col-md">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="icon bg-info text-white rounded-circle p-3">
+                        <i class="fas fa-users fa-lg"></i>
+                    </div>
+                    <h4 class="text-center">👨‍💼 Nhân viên</h4>
+                </div>
+                <h2 class="text-center mt-4">@Model.TotalEmployees</h2>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="alert alert-success">
-            <h4>🏢 Phòng ban</h4>
-            <p>@Model.TotalDepartments</p>
+
+    <!-- Card Phòng ban -->
+    <div class="col-md">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="icon bg-success text-white rounded-circle p-3">
+                        <i class="fas fa-building fa-lg"></i>
+                    </div>
+                    <h4 class="text-center">🏢 Phòng ban</h4>
+                </div>
+                <h2 class="text-center mt-4">@Model.TotalDepartments</h2>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="alert alert-warning">
-            <h4>📌 Chức vụ</h4>
-            <p>@Model.TotalPositions</p>
+
+    <!-- Card Chức vụ -->
+    <div class="col-md">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="icon bg-warning text-white rounded-circle p-3">
+                        <i class="fas fa-briefcase fa-lg"></i>
+                    </div>
+                    <h4 class="text-center">📌 Chức vụ</h4>
+                </div>
+                <h2 class="text-center mt-4">@Model.TotalPositions</h2>
+            </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="alert alert-danger">
-            <h4>💰 Lương tháng này</h4>
-            <p>@Model.TotalNetSalaryMonth.ToString("N0") VND</p>
+
+    <!-- Card Lương tháng này -->
+    <div class="col-md">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="icon bg-danger text-white rounded-circle p-3">
+                        <i class="fas fa-dollar-sign fa-lg"></i>
+                    </div>
+                    <h4 class="text-center">💰 Lương tháng này</h4>
+                </div>
+                <h2 class="text-center mt-4">@Model.TotalNetSalaryMonth.ToString("N0") VND</h2>
+            </div>
         </div>
     </div>
 </div>
+
+
+<!-- Biểu đồ thống kê -->
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h3 class="text-center">📊 Biểu đồ thống kê (Lương, Nhân viên, Phòng ban)</h3>
+        <canvas id="salaryChart"></canvas>
+    </div>
+</div>
+
+<!-- Đảm bảo rằng bạn đã thêm Script của Bootstrap, FontAwesome và Chart.js để các tính năng và biểu đồ hoạt động -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var ctx = document.getElementById('salaryChart').getContext('2d');
+        var salaryChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Nhân viên', 'Phòng ban', 'Chức vụ', 'Lương tháng này'],
+                datasets: [{
+                    label: 'Số liệu',
+                    data: [@Model.TotalEmployees, @Model.TotalDepartments, @Model.TotalPositions, @Model.TotalNetSalaryMonth],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#e74a3b'],
+                    borderColor: ['#4e73df', '#1cc88a', '#36b9cc', '#e74a3b'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>

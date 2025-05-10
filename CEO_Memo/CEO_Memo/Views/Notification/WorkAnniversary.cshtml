@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Kỷ Niệm Ngày Vào Làm";
+}
+
+<div class="container mt-5">
+    <!-- Tiêu đề chính với icon vui vẻ -->
+    <div class="text-center mb-4">
+        <h2 class="text-primary font-weight-bold">
+            <i class="fas fa-party-popper"></i> Thông báo Kỷ niệm Ngày Vào Làm <i class="fas fa-party-popper"></i>
+        </h2>
+    </div>
+
+    <!-- Danh sách nhân viên -->
+    <h3 class="text-info"><i class="fas fa-users"></i> Danh sách nhân viên:</h3>
+
+    @if (ViewBag.Anniversaries == null || ViewBag.Anniversaries.Count == 0)
+    {
+        <div class="alert alert-warning text-center">
+            <strong>@ViewBag.Message</strong>
+        </div>
+    }
+    else
+    {
+        <!-- Bảng hiển thị danh sách nhân viên -->
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>STT</th>
+                    <th>Tên Nhân Viên</th>
+                    <th>Ngày Vào Làm</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var emp in ViewBag.Anniversaries as List<CEO_Memo.Models.Employee>)
+                {
+                    <tr>
+                        <td>@(ViewBag.Anniversaries.IndexOf(emp) + 1)</td> <!-- Hiển thị STT -->
+                        <td>@emp.FullName</td>
+                        <td>
+                            @if (emp.HireDate.HasValue)
+                            {
+                                @emp.HireDate.Value.ToString("dd/MM/yyyy") <!-- Định dạng lại ngày tháng -->
+                            }
+                            else
+                            {
+                                <span class="text-muted">Chưa có thông tin</span> <!-- Nếu HireDate là null -->
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Nút gửi email cho các nhân viên có kỷ niệm ngày vào làm -->
+        <div class="text-center mt-4">
+            <form method="post" action="@Url.Action("SendAnniversaryEmails", "Notification")">
+                <button type="submit" class="btn btn-success btn-lg shadow-sm hover-effect">
+                    <i class="fas fa-envelope"></i> Gửi lời chúc kỷ niệm cho nhân viên
+                </button>
+            </form>
+        </div>
+    }
+</div>
+
+<!-- Thêm các hiệu ứng CSS -->
+<style>
+    /* Cải tiến bảng */
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Nút gửi email */
+    .btn-lg {
+        font-size: 18px;
+        padding: 12px 40px;
+    }
+
+    .btn-success:hover {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .hover-effect:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+    /* Thông báo không có dữ liệu */
+    .alert-warning {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+
+    /* Icon vui vẻ */
+    .fa-party-popper {
+        font-size: 1.5rem;
+        color: #f39c12;
+    }
+
+    .fa-users {
+        font-size: 1.3rem;
+        color: #007bff;
+    }
+
+    .fa-envelope {
+        font-size: 1.5rem;
+    }
+</style>
+
+<!-- Đảm bảo tải Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">

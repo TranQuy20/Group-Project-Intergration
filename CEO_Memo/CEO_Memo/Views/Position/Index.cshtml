@@ -4,19 +4,77 @@
     ViewBag.Title = "Danh sách chức vụ";
 }
 
-<h2>Danh sách chức vụ</h2>
+<!-- Tiêu đề -->
+<h2 class="text-center mb-4 text-primary">Danh sách chức vụ</h2>
 
-<table class="table table-striped">
-    <tr>
-        <th>Mã chức vụ</th>
-        <th>Tên chức vụ</th>
-    </tr>
+<!-- Bảng danh sách chức vụ -->
+<div class="table-responsive mt-4">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Mã chức vụ</th>
+                <th>Tên chức vụ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PositionID</td>
+                    <td>@item.PositionName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.PositionID</td>
-            <td>@item.PositionName</td>
-        </tr>
+<!-- Custom CSS -->
+<style>
+    /* Tiêu đề */
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #007bff;
     }
-</table>
+
+    /* Tạo độ rộng cho bảng */
+    .table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Thiết kế bảng */
+    .table th, .table td {
+        vertical-align: middle;
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .table th {
+        background-color: #343a40;
+        color: white;
+        font-size: 1.1rem;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    /* Cải thiện kiểu hiển thị các tiêu đề */
+    .thead-dark {
+        background-color: #343a40;
+    }
+
+    /* Tối ưu độ rộng cho các cột */
+    .table td, .table th {
+        width: 25%;
+    }
+
+
+</style>

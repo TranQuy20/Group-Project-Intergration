@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CEO_Memo.Models.ViewModels
+﻿namespace CEO_Memo.Models.ViewModels
 {
     public class DashboardViewModel
     {
@@ -12,5 +7,4 @@ namespace CEO_Memo.Models.ViewModels
         public int TotalPositions { get; set; }
         public decimal TotalNetSalaryMonth { get; set; }
     }
-
 }

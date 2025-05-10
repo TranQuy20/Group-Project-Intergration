@@ -1,29 +1,163 @@
 ﻿@model IEnumerable<CEO_Memo.Models.Attendance>
 
 @{
-    ViewBag.Title = "Chấm công " + ViewBag.Month;
+    ViewBag.Title = "Chấm công tháng " + ViewBag.Month;
 }
 
-<h2>Chấm công tháng @ViewBag.Month</h2>
+<!-- Tiêu đề -->
+<h2 class="text-center mb-4 text-primary font-weight-bold" style="font-size: 2rem;">Chấm công tháng @ViewBag.Month</h2>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Mã NV</th>
-            <th>Ngày làm việc</th>
-            <th>Nghỉ phép</th>
-            <th>Vắng mặt</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<!-- Bảng chấm công -->
+<div class="table-responsive mt-4">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
             <tr>
-                <td>@item.EmployeeID</td>
-                <td>@item.WorkDays</td>
-                <td>@item.LeaveDays</td>
-                <td>@item.AbsentDays</td>
+                <th>Mã NV</th>
+                <th>Ngày làm việc</th>
+                <th>Nghỉ phép</th>
+                <th>Vắng mặt</th>
             </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeID</td>
+                    <td>@item.WorkDays</td>
+                    <td>@item.LeaveDays</td>
+                    <td>@item.AbsentDays</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Biểu đồ Chấm công -->
+<div class="mt-5">
+    <h3 class="text-center text-primary mb-3">Biểu đồ Chấm Công</h3>
+    <canvas id="attendanceChart" class="chart-canvas"></canvas>
+</div>
+
+<!-- Thêm Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Dữ liệu biểu đồ
+    var ctx = document.getElementById('attendanceChart').getContext('2d');
+    var attendanceChart = new Chart(ctx, {
+        type: 'bar', // Biểu đồ cột
+        data: {
+            labels: ['Mã NV 1', 'Mã NV 2', 'Mã NV 3', 'Mã NV 4', 'Mã NV 5'], // Nhãn cho các nhân viên
+            datasets: [{
+                label: 'Ngày làm việc',
+                data: [22, 20, 23, 21, 25], // Dữ liệu ngày làm việc
+                backgroundColor: '#007bff',
+                borderColor: '#007bff',
+                borderWidth: 1
+            }, {
+                label: 'Nghỉ phép',
+                data: [2, 3, 1, 2, 0], // Dữ liệu ngày nghỉ phép
+                backgroundColor: '#ffc107',
+                borderColor: '#ffc107',
+                borderWidth: 1
+            }, {
+                label: 'Vắng mặt',
+                data: [1, 2, 0, 1, 1], // Dữ liệu ngày vắng mặt
+                backgroundColor: '#dc3545',
+                borderColor: '#dc3545',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top', // Đặt legend ở trên
+                },
+                tooltip: {
+                    enabled: true,
+                    callbacks: {
+                        label: function (context) {
+                            return context.dataset.label + ': ' + context.raw.toLocaleString(); // Hiển thị giá trị với định dạng số
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
-    </tbody>
-</table>
+    });
+</script>
+
+<!-- Custom CSS -->
+<style>
+    /* Cải thiện giao diện bảng */
+    .table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Màu sắc tiêu đề bảng */
+    th {
+        background-color: #343a40;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    /* Các hàng trong bảng */
+    td {
+        padding: 12px 10px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Màu sắc cho các dòng trong bảng */
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    /* Hover effect */
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1; /* Màu nền khi hover */
+        cursor: pointer;
+    }
+
+    /* Tạo độ rộng cho biểu đồ */
+    canvas {
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Thiết kế tiêu đề */
+    h3 {
+        font-size: 1.5rem;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    /* Cải thiện tiêu đề */
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    /* Định dạng chart canvas */
+    .chart-canvas {
+        margin-top: 30px;
+    }
+</style>

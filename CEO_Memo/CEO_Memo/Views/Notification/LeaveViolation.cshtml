@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Cảnh Báo Vi Phạm Nghỉ Phép";
+}
+
+<div class="container mt-5">
+    <!-- Tiêu đề chính -->
+    <div class="text-center mb-4">
+        <h2 class="text-danger font-weight-bold">
+            <i class="fas fa-exclamation-triangle"></i> Cảnh Báo Vi Phạm Nghỉ Phép <i class="fas fa-exclamation-triangle"></i>
+        </h2>
+        <p class="lead text-muted">@ViewBag.Message</p>
+    </div>
+
+    <!-- Danh sách nhân viên vi phạm nghỉ phép -->
+    <!-- Kiểm tra xem có nhân viên vi phạm nghỉ phép không -->
+    @if (ViewBag.Violations != null && ViewBag.Violations.Count > 0)
+    {
+        <h3 class="text-warning"><i class="fas fa-users-slash"></i> Danh sách nhân viên vi phạm nghỉ phép:</h3>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>STT</th>
+                    <th>Số Ngày Nghỉ Phép</th>
+                    <th>Tháng Nghỉ Phép</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var violation in ViewBag.Violations as List<CEO_Memo.Models.Attendance>)
+                {
+                    <tr>
+                        <td>@(ViewBag.Violations.IndexOf(violation) + 1)</td>
+                        <td>@violation.LeaveDays</td>
+                        <td>@violation.AttendanceMonth.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info text-center">
+            <strong>Không có nhân viên vi phạm nghỉ phép trong ngày hôm nay.</strong>
+        </div>
+    }
+
+
+
+
+    <hr />
+
+    <!-- Các bước tiếp theo -->
+    <h4 class="text-primary"><i class="fas fa-arrow-right"></i> Các bước tiếp theo:</h4>
+    <ul class="list-group">
+        <li class="list-group-item"><i class="fas fa-phone-alt"></i> Vui lòng liên hệ với bộ phận Nhân sự để xác nhận lý do nghỉ phép và tìm giải pháp thích hợp.</li>
+        <li class="list-group-item"><i class="fas fa-check-circle"></i> Hãy chắc chắn rằng các nhân viên này hiểu rõ quy định nghỉ phép của công ty để tránh vi phạm trong tương lai.</li>
+        <li class="list-group-item"><i class="fas fa-envelope"></i> Để biết thêm chi tiết hoặc yêu cầu, vui lòng liên hệ với bộ phận Nhân sự qua email.</li>
+    </ul>
+
+    <p class="mt-4">Trân trọng,<br>Ban lãnh đạo</p>
+    <!-- Nút gửi email cho các nhân viên vi phạm nghỉ phép -->
+    @using (Html.BeginForm("SendViolationEmail", "Notification", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger btn-lg shadow-sm hover-effect">
+                <i class="fas fa-envelope"></i> Gửi Cảnh Báo
+            </button>
+        </div>
+    }
+
+
+</div>
+
+<!-- Thêm các hiệu ứng CSS -->
+<style>
+    /* Bảng với hiệu ứng hover */
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Nút gửi email */
+    .btn-lg {
+        font-size: 18px;
+        padding: 12px 40px;
+    }
+
+    .btn-success:hover {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .alert-info {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+
+    /* Thông báo và các bước tiếp theo */
+    .list-group-item i {
+        margin-right: 10px;
+    }
+
+    /* Các biểu tượng */
+    .fa-exclamation-triangle {
+        color: #ffcc00;
+    }
+
+    .fa-users-slash {
+        color: #e74c3c;
+    }
+
+    .fa-arrow-right {
+        color: #3498db;
+    }
+
+    .fa-check-circle {
+        color: #2ecc71;
+    }
+
+    .fa-envelope {
+        color: #8e44ad;
+    }
+
+    .text-info {
+        color: #17a2b8;
+    }
+</style>
+
+<!-- Đảm bảo tải Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">

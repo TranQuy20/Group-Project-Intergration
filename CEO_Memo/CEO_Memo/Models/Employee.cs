@@ -14,16 +14,18 @@ namespace CEO_Memo.Models
         public DateTime? HireDate { get; set; }
         public int? DepartmentID { get; set; }
         public int? PositionID { get; set; }
-        public string Status { get; set; }
+        public string Status { get; set; } = "Active";
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+        public string ResetPasswordToken { get; set; }
 
         // Quan hệ (navigation properties)
         public virtual Department Department { get; set; }
         public virtual Position Position { get; set; }
         public virtual ICollection<Dividend> Dividends { get; set; }
+        public virtual ICollection<Salary> Salaries { get; set; }
     }
 }

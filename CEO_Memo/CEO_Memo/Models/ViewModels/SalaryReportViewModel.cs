@@ -12,6 +12,6 @@ namespace CEO_Memo.Models.ViewModels
         public decimal TotalAllowance { get; set; }
         public decimal TotalDeduction { get; set; }
 
-        public List<Salary> PayrollDetails { get; set; } 
+        public List<Salary> PayrollDetails { get; set; }  // Chi tiết các bảng lương
     }
 }

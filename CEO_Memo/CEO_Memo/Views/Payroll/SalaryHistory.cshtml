@@ -1,32 +1,77 @@
-﻿@model IEnumerable<CEO_Memo.Models.Salary>
+﻿@model List<CEO_Memo.Models.Salary>
 
-@{
-    ViewBag.Title = "Lịch sử lương";
+<h2 class="text-center text-primary mb-4">Lịch sử lương</h2>
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tháng</th>
+                    <th>Lương cơ bản</th>
+                    <th>Phụ cấp</th>
+                    <th>Khấu trừ</th>
+                    <th>Lương thực lĩnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var salary in Model)
+                {
+                    <tr>
+                        <td>@salary.SalaryMonth.ToString("MM/yyyy")</td>
+                        <td>@salary.BaseSalary.ToString("N0") đ</td>
+                        <td>@salary.Bonus.ToString("N0") đ</td>
+                        <td>@salary.Deductions.ToString("N0") đ</td>
+                        <td>@salary.NetSalary.ToString("N0") đ</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning text-center">⚠️ Chưa có dữ liệu lương nào.</div>
 }
 
-<h2>Lịch sử lương của nhân viên @ViewBag.EmployeeID</h2>
+<!-- Additional Styling -->
+<style>
+    /* Table styling */
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Tháng</th>
-            <th>Lương cơ bản</th>
-            <th>Phụ cấp</th>
-            <th>Khấu trừ</th>
-            <th>Lương thực lĩnh</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.SalaryMonth.ToString("MM/yyyy")</td>
-                <td>@item.BaseSalary.ToString("N0")</td>
-                <td>@item.Bonus.ToString("N0")</td>
-                <td>@item.Deductions.ToString("N0")</td>
-                <td>@item.NetSalary.ToString("N0")</td>
-            </tr>
-        }
-    </tbody>
-</table>
-}
+    .table-striped tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f1f1;
+        transition: background-color 0.3s ease;
+    }
+
+    .thead-dark {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    .table td, .table th {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table th {
+        font-weight: bold;
+    }
+
+    /* Alert box styling */
+    .alert-warning {
+        font-size: 1.2rem;
+        padding: 15px;
+        text-align: center;
+    }
+
+
+</style>

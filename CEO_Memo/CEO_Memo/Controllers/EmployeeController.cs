@@ -2,39 +2,71 @@
 using CEO_Memo.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity; // ✅ THÊM dòng này
+using System.Data.Entity; 
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CEO_Memo.Models.Payroll;
 using CEO_Memo.Services;
+using CEO_Memo.Models.ViewModels;
+using Microsoft.SqlServer.Server;
 
 namespace CEO_Memo.Controllers
 {
     public class EmployeeController : Controller
     {
-        private readonly HumanContext db = new HumanContext(); // ✅ nên dùng readonly
-        private readonly PayrollContext dbPayroll = new PayrollContext(); // ✅ MySQL context
+        private readonly HumanContext db = new HumanContext(); 
+        private readonly PayrollContext dbPayroll = new PayrollContext();
 
 
         // Xem danh sách nhân viên
         public ActionResult Index(string search)
         {
-            var employees = from e in db.Employees select e;
+            var HumanContext = new HumanContext();
+            var PayrollContext = new PayrollContext();
 
+            var employees = HumanContext.Employees
+                .Include(e => e.Department)
+                .Include(e => e.Position)
+                .AsQueryable();
+
+            // Kiểm tra nếu có từ khóa tìm kiếm
             if (!string.IsNullOrEmpty(search))
             {
+                // Tìm kiếm trong nhiều trường: ID, Tên, Phòng ban, Chức danh công việc, Email
                 employees = employees.Where(e =>
-                    e.FullName.Contains(search));
+                    e.FullName.Contains(search) ||
+                    e.Email.Contains(search) ||
+                    e.Department.DepartmentName.Contains(search) ||
+                    e.Position.PositionName.Contains(search) ||
+                    e.EmployeeID.ToString().Contains(search) // Tìm kiếm theo ID
+                );
             }
 
-            return View(employees.ToList());
+            var departments = PayrollContext.Departments.ToList();
+            var positions = HumanContext.Positions.ToList();
+
+            var employeeViewModels = employees.ToList().Select(e => new EmployeeViewModel
+            {
+                EmployeeID = e.EmployeeID,
+                FullName = e.FullName,
+                Gender = e.Gender,
+                Email = e.Email,
+                DateOfBirth = e.DateOfBirth,
+                DepartmentName = departments.FirstOrDefault(d => d.DepartmentID == e.DepartmentID)?.DepartmentName ?? "",
+                PositionName = positions.FirstOrDefault(p => p.PositionID == e.PositionID)?.PositionName ?? ""
+            }).ToList();
+
+            return View(employeeViewModels);
         }
+
+
 
 
         // Thêm mới
         public ActionResult Create()
         {
+            var employee = new Employee { Status = "Active" };
             ViewBag.Departments = new SelectList(db.Departments, "DepartmentID", "DepartmentName");
             ViewBag.Positions = new SelectList(db.Positions, "PositionID", "PositionName");
             ViewBag.RoleOptions = new SelectList(new[]
@@ -44,7 +76,13 @@ namespace CEO_Memo.Controllers
         new { Value = "Payroll", Text = "Quản lý bảng lương" },
         new { Value = "Staff", Text = "Nhân viên" }
     }, "Value", "Text");
-            return View();
+            // Thêm phần lựa chọn trạng thái
+            ViewBag.StatusOptions = new SelectList(new[] {
+        new { Value = "Active", Text = "Hoạt động" },
+        new { Value = "Inactive", Text = "Không hoạt động" }
+    }, "Value", "Text");
+
+            return View(employee);
         }
 
 
@@ -103,6 +141,11 @@ namespace CEO_Memo.Controllers
     new { Value = "Payroll", Text = "Quản lý bảng lương" },
     new { Value = "Staff", Text = "Nhân viên" }
 }, "Value", "Text", employee.Role); // chọn lại giá trị đã chọn trước đó
+            ViewBag.StatusOptions = new SelectList(new[] {
+        new { Value = "Active", Text = "Hoạt động" },
+        new { Value = "Inactive", Text = "Không hoạt động" }
+    }, "Value", "Text", employee.Status);
+
             return View(employee);
         }
 
@@ -117,6 +160,14 @@ namespace CEO_Memo.Controllers
 
             ViewBag.Departments = new SelectList(db.Departments, "DepartmentID", "DepartmentName", emp.DepartmentID);
             ViewBag.Positions = new SelectList(db.Positions, "PositionID", "PositionName", emp.PositionID);
+            ViewBag.RoleOptions = new SelectList(new[] {
+
+        new { Value = "Admin", Text = "Quản trị viên" },
+        new { Value = "HR", Text = "Quản lý nhân sự" },
+        new { Value = "Payroll", Text = "Quản lý bảng lương" },
+        new { Value = "Staff", Text = "Nhân viên" }
+    }, "Value", "Text");
+
 
             return View(emp);
         }
@@ -160,6 +211,14 @@ namespace CEO_Memo.Controllers
 
             ViewBag.Departments = new SelectList(db.Departments, "DepartmentID", "DepartmentName", emp.DepartmentID);
             ViewBag.Positions = new SelectList(db.Positions, "PositionID", "PositionName", emp.PositionID);
+            ViewBag.RoleOptions = new SelectList(new[] {
+
+        new { Value = "Admin", Text = "Quản trị viên" },
+        new { Value = "HR", Text = "Quản lý nhân sự" },
+        new { Value = "Payroll", Text = "Quản lý bảng lương" },
+        new { Value = "Staff", Text = "Nhân viên" }
+    }, "Value", "Text");
+
             return View(emp);
         }
 
@@ -170,7 +229,24 @@ namespace CEO_Memo.Controllers
             var emp = db.Employees.Find(id);
             if (emp == null)
                 return HttpNotFound();
-            return View(emp);
+
+            var employeeViewModel = new EmployeeViewModel
+            {
+                EmployeeID = emp.EmployeeID,
+                FullName = emp.FullName,
+                Gender = emp.Gender,
+                DateOfBirth = emp.DateOfBirth,
+                DepartmentName = db.Departments
+                                    .Where(d => d.DepartmentID == emp.DepartmentID)
+                                    .Select(d => d.DepartmentName)
+                                    .FirstOrDefault(),
+                PositionName = db.Positions
+                                 .Where(p => p.PositionID == emp.PositionID)
+                                 .Select(p => p.PositionName)
+                                 .FirstOrDefault()
+            };
+
+            return View(employeeViewModel);
         }
 
         [HttpPost, ActionName("Delete")]

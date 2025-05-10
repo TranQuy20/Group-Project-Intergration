@@ -1,0 +1,161 @@
+﻿@model CEO_Memo.Models.ViewModels.SalaryReportViewModel
+
+@{
+    ViewBag.Title = "Gửi Lương";
+}
+
+<!-- Tiêu đề chính -->
+<div class="text-center mb-5">
+    <h2 class="display-4 text-primary font-weight-bold" style="font-size: 2rem;">Báo cáo lương tháng @Model.Month</h2>
+
+</div>
+
+<!-- Card Tổng hợp thông tin bảng lương -->
+<div class="row mb-4">
+    <!-- Card Số bảng lương -->
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-lg border-0 rounded-lg hover-effect">
+            <div class="card-body text-center">
+                <i class="fas fa-file-invoice-dollar fa-3x text-primary mb-3"></i>
+                <h5 class="card-title text-dark">Số bảng lương</h5>
+                <p class="card-text display-4 text-primary">@Model.TotalPayrolls</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Tổng phụ cấp -->
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-lg border-0 rounded-lg hover-effect">
+            <div class="card-body text-center">
+                <i class="fas fa-hand-holding-usd fa-3x text-success mb-3"></i>
+                <h5 class="card-title text-dark">Tổng phụ cấp</h5>
+                <p class="card-text display-4 text-success">@Model.TotalAllowance.ToString("N0")</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Tổng khấu trừ -->
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-lg border-0 rounded-lg hover-effect">
+            <div class="card-body text-center">
+                <i class="fas fa-money-bill-wave fa-3x text-warning mb-3"></i>
+                <h5 class="card-title text-dark">Tổng khấu trừ</h5>
+                <p class="card-text display-4 text-warning">@Model.TotalDeduction.ToString("N0")</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Tổng lương thực lĩnh -->
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-lg border-0 rounded-lg hover-effect">
+            <div class="card-body text-center">
+                <i class="fas fa-credit-card fa-3x text-danger mb-3"></i>
+                <h5 class="card-title text-dark">Tổng lương thực lĩnh</h5>
+                <p class="card-text display-4 text-danger">@Model.TotalNetSalary.ToString("N0")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chi tiết bảng lương -->
+<div class="card shadow-lg border-0 rounded-lg mb-4">
+    <div class="card-header bg-gradient-secondary text-white">
+        <h5 class="card-title">Chi tiết bảng lương</h5>
+    </div>
+    <div class="card-body">
+        @if (Model != null && Model.PayrollDetails != null && Model.PayrollDetails.Any())
+        {
+            <table class="table table-hover table-bordered table-responsive-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Mã NV</th>
+                        <th>Lương cơ bản</th>
+                        <th>Phụ cấp</th>
+                        <th>Khấu trừ</th>
+                        <th>Lương thực lĩnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.PayrollDetails)
+                    {
+                        <tr>
+                            <td>@item.EmployeeID</td>
+                            <td>@String.Format("{0:N0}", item.BaseSalary)</td>
+                            <td>@String.Format("{0:N0}", item.Bonus)</td>
+                            <td>@String.Format("{0:N0}", item.Deductions)</td>
+                            <td><strong>@String.Format("{0:N0}", item.NetSalary)</strong></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-warning">Không có dữ liệu bảng lương để hiển thị.</div>
+        }
+
+    </div>
+</div>
+
+<!-- Hiển thị thông báo nếu có -->
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>@ViewBag.Message</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<!-- Form để gửi lương cho tất cả nhân viên -->
+<div class="text-center mb-4">
+    <form method="post" action="@Url.Action("SendMonthlyPayroll", "Notification")">
+        <button type="submit" class="btn btn-success btn-lg shadow-sm hover-effect">Gửi lương cho tất cả nhân viên</button>
+    </form>
+</div>
+
+<!-- Thêm các hiệu ứng CSS và JS cho giao diện hấp dẫn -->
+<style>
+    .card-body {
+        padding: 30px, 50px;
+    }
+    .card-header {
+        background: linear-gradient(135deg, #007bff, #6c757d);
+    }
+    .hover-effect:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .btn-lg {
+        padding: 15px 40px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .alert-dismissible .close {
+        font-size: 1.5rem;
+    }
+</style>
+
+<script>
+    // JS to handle alert dismissal with animation
+    $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function () {
+        $(this).alert('close');
+    });
+</script>

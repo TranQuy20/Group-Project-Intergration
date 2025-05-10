@@ -1,34 +1,122 @@
-﻿@model CEO_Memo.Models.Employee
+﻿@model CEO_Memo.Models.ViewModels.EmployeeViewModel
+
 
 @{
     ViewBag.Title = "Xóa nhân viên";
 }
 
-<h2>Xóa nhân viên</h2>
+<!-- Thêm link đến các thư viện CSS của Bootstrap, Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
-<h3>Bạn có chắc chắn muốn xóa nhân viên sau không?</h3>
-<div>
-    <h4>@Model.FullName</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">Giới tính</dt>
-        <dd class="col-sm-10">@Model.Gender</dd>
+<style>
 
-        <dt class="col-sm-2">Ngày sinh</dt>
-        <dd class="col-sm-10">@Model.DateOfBirth?.ToString("dd/MM/yyyy")</dd>
 
-        <dt class="col-sm-2">Phòng ban</dt>
-        <dd class="col-sm-10">@Model.DepartmentID</dd>
-
-        <dt class="col-sm-2">Chức vụ</dt>
-        <dd class="col-sm-10">@Model.PositionID</dd>
-    </dl>
-
-    @using (Html.BeginForm("Delete", "Employee", new { id = Model.EmployeeID }, FormMethod.Post))
-
-    {
-        @Html.AntiForgeryToken()
-        <input type="submit" value="Xác nhận xóa" class="btn btn-danger" />
-        @Html.ActionLink("Hủy bỏ", "Index", null, new { @class = "btn btn-secondary" })
+    .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
     }
+
+    .card-header {
+        background-color: #dc3545;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        padding: 15px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        border-radius: 50px;
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.2);
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .container {
+        max-width: 700px;
+    }
+
+    .confirmation-box {
+        padding: 20px;
+        background-color: #f8d7da;
+        border-radius: 10px;
+        border: 1px solid #f5c6cb;
+    }
+
+        .confirmation-box h4 {
+            color: #721c24;
+        }
+
+        .confirmation-box dl {
+            font-size: 16px;
+        }
+</style>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-trash-alt"></i> Xác nhận xóa nhân viên
+        </div>
+        <div class="card-body">
+            <div class="confirmation-box">
+                <h4>Bạn có chắc chắn muốn xóa nhân viên sau không?</h4>
+                <h5 class="text-center text-danger">@Model.FullName</h5>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-4">Giới tính</dt>
+                    <dd class="col-sm-8">@Model.Gender</dd>
+
+                    <dt class="col-sm-4">Ngày sinh</dt>
+                    <dd class="col-sm-8">@(Model.DateOfBirth?.ToString("dd/MM/yyyy") ?? "Chưa có thông tin")</dd>
+                    <dt class="col-sm-4">Phòng ban</dt>
+                    <dd class="col-sm-8">@Model.DepartmentName</dd>
+
+                    <dt class="col-sm-4">Chức vụ</dt>
+                    <dd class="col-sm-8">@Model.PositionName</dd>
+                </dl>
+            </div>
+
+            <div class="form-group text-center mt-4">
+                <!-- Form xóa -->
+                @using (Html.BeginForm("Delete", "Employee", new { id = Model.EmployeeID }, FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-check-circle"></i> Xác nhận xóa</button>
+                }
+                <a href="@Url.Action("Index", "Employee")" class="btn btn-secondary ml-3"><i class="fas fa-times-circle"></i> Hủy bỏ</a>
+            </div>
+        </div>
+    </div>
 </div>

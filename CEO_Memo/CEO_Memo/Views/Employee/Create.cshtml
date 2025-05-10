@@ -8,73 +8,213 @@
 {
     @Html.AntiForgeryToken()
 
-    <h4>Nhân viên</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="container mt-5">
+        <!-- Tiêu đề -->
+        <div class="text-center mb-4">
+            <h4 class="font-weight-bold text-primary">Thêm nhân viên mới</h4>
+            <hr />
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.FullName)
-        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", required = "required" })
+        <!-- Hiển thị các lỗi (nếu có) -->
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <!-- Form nhập liệu trong box -->
+        <div class="card shadow-lg p-4 rounded">
+            <div class="row">
+                <!-- Cột trái -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FullName, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", placeholder = "Nhập họ tên", required = "required" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.DateOfBirth, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", type = "date", required = "required" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.HireDate, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.HireDate, new { @class = "form-control", type = "date", required = "required" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Gender, new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.Gender,
+                            new SelectList(new[] {
+                                new { Value = "Male", Text = "Nam" },
+                                new { Value = "Female", Text = "Nữ" }
+                            }, "Value", "Text", Model.Gender),
+                            "-- Chọn giới tính --",
+                            new { @class = "form-control custom-select" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.PhoneNumber, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", placeholder = "Nhập số điện thoại" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", placeholder = "Nhập email" })
+                    </div>
+                </div>
+
+                <!-- Cột phải -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.DepartmentID, new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.DepartmentID, (SelectList)ViewBag.Departments, "-- Chọn phòng ban --", new { @class = "form-control custom-select", required = "required" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.PositionID, new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.PositionID, (SelectList)ViewBag.Positions, "-- Chọn chức vụ --", new { @class = "form-control custom-select", required = "required" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Status, new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.Status,
+                            new SelectList(new[] {
+                                new { Value = "Active", Text = "Hoạt động" },
+                                new { Value = "Inactive", Text = "Không hoạt động" }
+                            }, "Value", "Text", Model.Status ?? "Active"), // Đảm bảo có giá trị mặc định
+                            "-- Chọn trạng thái --",
+                            new { @class = "form-control custom-select", required = "required" })
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Username, new { @class = "form-label" })
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Nhập tên đăng nhập" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "form-label" })
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Nhập mật khẩu" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Role, new { @class = "form-label" })
+                        @Html.DropDownListFor(m => m.Role, (SelectList)ViewBag.RoleOptions, "-- Chọn vai trò --", new { @class = "form-control custom-select", required = "required" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nút lưu -->
+            <div class="form-group text-center mt-4">
+                <button type="submit" class="btn btn-success btn-lg">
+                    <i class="fas fa-save"></i> Lưu
+                </button>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.DateOfBirth)
-        @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", type = "date", required = "required" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.HireDate)
-        @Html.TextBoxFor(m => m.HireDate, new { @class = "form-control", type = "date", required = "required" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Gender)
-        @Html.TextBoxFor(m => m.Gender, new { @class = "form-control" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.PhoneNumber)
-        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email)
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.DepartmentID)
-        @Html.DropDownListFor(m => m.DepartmentID, (SelectList)ViewBag.Departments, "-- Chọn phòng ban --", new { @class = "form-control", required = "required" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.PositionID)
-        @Html.DropDownListFor(m => m.PositionID, (SelectList)ViewBag.Positions, "-- Chọn chức vụ --", new { @class = "form-control", required = "required" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Status)
-        @Html.TextBoxFor(m => m.Status, new { @class = "form-control", value = "Active" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Username)
-        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password)
-        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Role)
-        @Html.DropDownListFor(m => m.Role, (SelectList)ViewBag.RoleOptions, "-- Chọn vai trò --", new { @class = "form-control", required = "required" })
-
-
-
-    </div>
-
-
-    <button type="submit" class="btn btn-primary">Lưu</button>
 }
+
+<!-- Custom CSS -->
+<style>
+    /* Label cho các trường nhập liệu */
+    .form-label {
+        font-weight: bold;
+        color: #007bff;
+        font-size: 1.1rem;
+        display: block; /* Đảm bảo label luôn hiển thị trên trường nhập liệu */
+        margin-bottom: 8px; /* Tạo khoảng cách giữa label và input */
+    }
+
+    /* Các trường nhập liệu */
+    .form-control {
+        font-size: 1rem;
+        padding: 12px 15px; /* Đảm bảo đủ không gian cho chữ */
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        height: 45px; /* Đảm bảo chiều cao của textbox đủ lớn */
+        width: 100%; /* Đảm bảo chiều rộng phù hợp */
+    }
+
+    .form-control:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+
+    /* Các dropdown - phần phòng ban và chức vụ */
+    .custom-select {
+        font-size: 1rem;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        height: 55px; /* Đảm bảo dropdown có chiều cao đủ lớn */
+        width: 100%; /* Đảm bảo chiều rộng dropdown */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;base64,...'); /* Thêm icon xuống cho dropdown */
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+    }
+
+    /* Nút "Lưu" */
+    .btn-lg {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+        border-radius: 5px;
+    }
+
+    /* Hiệu ứng hover cho nút Lưu */
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        opacity: 0.9;
+        transform: scale(1.05);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Cải thiện các phần tử trong form */
+    .container {
+        max-width: 1000px;
+        margin-top: 50px;
+    }
+
+    .card {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+    }
+
+    /* Tạo khoảng cách giữa các phần tử trong form */
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group input, .form-group select {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    /* Thiết kế các hiệu ứng hover cho các trường nhập liệu */
+    .form-group input:focus, .form-group select:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    }
+
+    /* Thiết kế dropdown cho phần Chọn phòng ban và Chọn chức vụ */
+    select.form-control.custom-select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;base64,...'); /* Thêm icon xuống cho dropdown */
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+    }
+
+
+    
+</style>
+

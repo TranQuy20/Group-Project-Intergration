@@ -31,14 +31,20 @@ namespace CEO_Memo.Controllers
         // Lịch sử lương theo nhân viên
         public ActionResult SalaryHistory(int employeeId)
         {
+            var today = DateTime.Today;
+            var recentMonths = 3;  // Số tháng gần nhất
+            var startDate = today.AddMonths(-recentMonths);  // Tính toán ngày bắt đầu ngoài truy vấn
+
             var history = db.Salaries
-                            .Where(s => s.EmployeeID == employeeId)
-                            .OrderByDescending(s => s.SalaryMonth)
-                            .ToList();
+                .Where(s => s.EmployeeID == employeeId && s.SalaryMonth >= startDate)
+                .OrderByDescending(s => s.SalaryMonth)
+                .ToList();
 
             ViewBag.EmployeeID = employeeId;
             return View(history);
         }
+
+
 
 
 

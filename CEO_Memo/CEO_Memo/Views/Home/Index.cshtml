@@ -1,33 +1,98 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Trang Chủ Quản Lý Nhân Sự";
 }
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+</head>
+<main class="container mt-5">
+    <!-- Tiêu đề Trang Chủ -->
+    <section class="text-center mb-5">
+        <h1 id="title" class="display-4 font-weight-bold text-primary">Chào mừng đến với Hệ thống Quản Lý Nhân Sự</h1>
+        <p class="lead text-muted">Khám phá công cụ quản lý nhân sự tiên tiến, giúp bạn tối ưu hóa công tác quản lý lương, chấm công, phòng ban và báo cáo một cách nhanh chóng và hiệu quả.</p>
+        <p class="text-muted">Với giao diện thân thiện, tính năng mạnh mẽ, bạn sẽ tiết kiệm thời gian và nâng cao hiệu quả công việc.</p>
     </section>
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-    </div>
+    <!-- Đoạn Giới Thiệu với Đồ Họa -->
+    <section class="row text-center mb-5">
+        <div class="col-md-4">
+            <div class="card shadow-lg border-light rounded mb-4 mb-md-0">
+                <div class="card-body">
+                    <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                    <h3 class="card-title text-primary">Quản lý hiệu quả</h3>
+                    <p class="card-text">Hệ thống giúp bạn tối ưu hóa quy trình làm việc, giảm thiểu thời gian và chi phí quản lý nhân sự.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-light rounded mb-4 mb-md-0">
+                <div class="card-body">
+                    <i class="fas fa-users fa-3x text-success mb-3"></i>
+                    <h3 class="card-title text-success">Quản lý nhân viên</h3>
+                    <p class="card-text">Theo dõi hồ sơ nhân viên, tình trạng làm việc, và các thay đổi liên quan đến lương, phòng ban một cách dễ dàng.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-light rounded">
+                <div class="card-body">
+                    <i class="fas fa-chart-line fa-3x text-warning mb-3"></i>
+                    <h3 class="card-title text-warning">Báo cáo và phân tích</h3>
+                    <p class="card-text">Tạo báo cáo chi tiết về lương, phòng ban, nhân sự và các chỉ số quan trọng để đưa ra quyết định chính xác.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Các tính năng nổi bật -->
+    <section class="text-center mb-5">
+        <h2 class="display-6 text-dark">Các tính năng nổi bật</h2>
+        <p class="lead text-muted mb-5">Khám phá các tính năng chính của hệ thống Quản lý Nhân sự:</p>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-5">
+                <div class="card shadow-lg rounded">
+                    <div class="card-body text-center">
+                        <i class="fas fa-clipboard-check fa-4x text-primary mb-3"></i>
+                        <h4 class="card-title text-primary">Chấm công thông minh</h4>
+                        <p class="card-text">Quản lý giờ làm việc, nghỉ phép và chấm công tự động, dễ dàng theo dõi và kiểm soát.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-5">
+                <div class="card shadow-lg rounded">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users-cog fa-4x text-success mb-3"></i>
+                        <h4 class="card-title text-success">Quản lý nhân sự</h4>
+                        <p class="card-text">Quản lý thông tin nhân viên, phòng ban, chức vụ và tình trạng làm việc từ một hệ thống duy nhất.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-5">
+                <div class="card shadow-lg rounded">
+                    <div class="card-body text-center">
+                        <i class="fas fa-file-invoice-dollar fa-4x text-warning mb-3"></i>
+                        <h4 class="card-title text-warning">Bảng lương tự động</h4>
+                        <p class="card-text">Tính toán và cập nhật bảng lương tự động, bao gồm thu nhập, phụ cấp, bảo hiểm và các khoản khấu trừ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kêu gọi hành động -->
+    <section class="text-center">
+        <p class="lead mb-4">Khám phá thêm các tính năng và nâng cao hiệu quả quản lý nhân sự của bạn ngay hôm nay.</p>
+        <a href="@Url.Action("Dashboard", "Home")" class="btn btn-lg btn-primary shadow-sm">Khám Phá Ngay &raquo;</a>
+    </section>
+
 </main>
+
+<style>
+    #title {
+        font-size: 2.7rem; /* Điều chỉnh kích thước theo ý muốn */
+    }
+</style>
