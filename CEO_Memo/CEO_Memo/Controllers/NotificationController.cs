@@ -7,10 +7,12 @@ using CEO_Memo.DAL;
 using CEO_Memo.Helpers; // Import EmailHelper
 using System.Data.Entity;  // Thêm dòng này vào đầu controller của bạn
 using System.Collections.Generic;  // Đảm bảo thêm dòng này để sử dụng List<>
+using CEO_Memo.Filters; // Đảm bảo bạn đã thêm namespace chứa AuthorizeRoles
 
 
 namespace CEO_Memo.Controllers
 {
+    [AuthorizeRoles("Admin")]
     public class NotificationController : Controller
     {
 

@@ -1,4 +1,5 @@
 ﻿using CEO_Memo.DAL;
+using CEO_Memo.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CEO_Memo.Controllers
 {
+    [AuthorizeRoles("Admin", "HR")]
     public class PositionController : Controller
     {
         private HumanContext db = new HumanContext();

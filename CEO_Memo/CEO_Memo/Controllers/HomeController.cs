@@ -1,4 +1,5 @@
 ﻿using CEO_Memo.DAL;
+using CEO_Memo.Filters;
 using CEO_Memo.Models.ViewModels;
 using System;
 using System.Data.Entity;
@@ -15,6 +16,7 @@ namespace CEO_Memo.Controllers
 
 
         // Action để hiển thị Dashboard
+        [AuthorizeRoles("Admin", "HR", "Payroll")]
         public ActionResult Dashboard()
         {
             // Kiểm tra nếu session không tồn tại (người dùng chưa đăng nhập)
@@ -47,8 +49,8 @@ namespace CEO_Memo.Controllers
             return View(model);  // Trả về view với dữ liệu Dashboard
         }
 
-
         // Thông tin cá nhân của nhân viên
+        [AuthorizeRoles("Staff")]
         public ActionResult EmployeeInfo(int employeeId)
         {
             // Lấy thông tin nhân viên

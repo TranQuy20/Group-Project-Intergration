@@ -1,4 +1,5 @@
 ﻿using CEO_Memo.DAL;
+using CEO_Memo.Filters;
 using CEO_Memo.Models.ViewModels;
 using System;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Web.Mvc;
 
 namespace CEO_Memo.Controllers
 {
+    [AuthorizeRoles("Admin")]
     public class ReportController : Controller
     {
         private HumanContext dbHuman = new HumanContext();

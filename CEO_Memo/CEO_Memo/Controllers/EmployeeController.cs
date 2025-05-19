@@ -10,9 +10,11 @@ using CEO_Memo.Models.Payroll;
 using CEO_Memo.Services;
 using CEO_Memo.Models.ViewModels;
 using Microsoft.SqlServer.Server;
+using CEO_Memo.Filters;
 
 namespace CEO_Memo.Controllers
 {
+    [AuthorizeRoles("Admin", "HR")]
     public class EmployeeController : Controller
     {
         private readonly HumanContext db = new HumanContext(); 

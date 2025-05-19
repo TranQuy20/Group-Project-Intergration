@@ -1,4 +1,5 @@
 ﻿using CEO_Memo.DAL;
+using CEO_Memo.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace CEO_Memo.Controllers
         private PayrollContext db = new PayrollContext();
 
         // Xem bảng lương (theo tháng)
+        [AuthorizeRoles("Admin", "Payroll")]
         public ActionResult Index()
         {
             var today = DateTime.Today;
@@ -29,6 +31,7 @@ namespace CEO_Memo.Controllers
 
 
         // Lịch sử lương theo nhân viên
+        [AuthorizeRoles("Staff")]
         public ActionResult SalaryHistory(int employeeId)
         {
             var today = DateTime.Today;
@@ -50,6 +53,7 @@ namespace CEO_Memo.Controllers
 
 
         // Dữ liệu chấm công
+        [AuthorizeRoles("Admin", "Payroll")]
         public ActionResult Attendance(int? employeeId, DateTime? month)
         {
             if (month == null) month = DateTime.Today;

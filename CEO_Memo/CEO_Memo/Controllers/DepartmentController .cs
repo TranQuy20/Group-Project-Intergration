@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace CEO_Memo.Controllers
 {
+    [AuthorizeRoles("Admin", "HR")]
     public class DepartmentController : Controller
     {
         private HumanContext db = new HumanContext();
